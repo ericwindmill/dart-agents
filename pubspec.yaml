@@ -1,0 +1,45 @@
+name: dart_agents_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+workspace:
+  - packages/ai_primitives
+  - packages/dart_agents
+
+dev_dependencies:
+  melos: ^7.0.0
+
+melos:
+  packages:
+    - packages/**
+
+  scripts:
+    analyze:
+      description: Run the analyzer over every package in the workspace.
+      run: dart analyze --fatal-infos --fatal-warnings
+      exec:
+        concurrency: 1
+
+    test:
+      description: Run tests for every package in the workspace.
+      run: dart test
+      exec:
+        concurrency: 1
+
+    format:
+      description: Check formatting across the workspace without writing changes.
+      run: dart format --output=none --set-exit-if-changed .
+      exec:
+        concurrency: 1
+
+    format:fix:
+      description: Format every package in the workspace in place.
+      run: dart format .
+      exec:
+        concurrency: 1
+
+    check:
+      description: Run format, analyze, and test — the full pre-publish gate.
+      run: melos run format && melos run analyze && melos run test

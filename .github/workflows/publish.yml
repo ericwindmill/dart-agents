@@ -1,0 +1,41 @@
+name: Publish
+
+# Manually triggered on purpose. Once you've published each package to
+# pub.dev for the first time by hand (`melos run check` locally, then
+# `dart pub publish` from each package directory) and you're confident in
+# the Conventional Commits -> version bump flow, this can be switched to
+# run on push to main instead.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run only (no actual publish)"
+        type: boolean
+        default: true
+
+jobs:
+  publish:
+    name: Version and publish
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # required for pub.dev OIDC publishing
+      contents: write # required if versioning pushes tags/commits
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - uses: bluefireteam/melos-action@v3
+
+      - name: Format, analyze, test
+        run: melos run check
+
+      - name: Publish (dry run)
+        if: ${{ inputs.dry_run }}
+        run: melos publish
+
+      - name: Publish
+        if: ${{ !inputs.dry_run }}
+        run: melos publish --no-dry-run --yes
