@@ -14,7 +14,7 @@
 /// reshaping.
 ///
 /// For agent implementations built on top of these primitives, see e.g.
-/// `package:mini_swe_agent`.
+/// `package:dart_agents`.
 library;
 
 export 'src/ai.dart';

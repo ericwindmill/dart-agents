@@ -82,8 +82,12 @@ class Result extends Equatable {
     // 2. Fall back: last tool-result message containing text.
     for (final message in messages.reversed) {
       if (message.role == Role.tool) {
-        final text = message.text;
-        if (text != null && text.isNotEmpty) return text;
+        for (final part in message.content) {
+          if (part is ToolResultPart) {
+            final output = part.output;
+            if (output is String && output.isNotEmpty) return output;
+          }
+        }
       }
     }
     return null;

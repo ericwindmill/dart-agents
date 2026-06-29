@@ -8,7 +8,7 @@ Adopted Dart pub workspaces + Melos for repo-wide tooling:
   packages, and a `melos:` section defining `format`, `analyze`, `test`,
   and `check` scripts.
 - Both packages now use `resolution: workspace` instead of a `path:`
-  dependency for `ai_primitives` — `mini_swe_agent` depends on
+  dependency for `ai_primitives` — `dart_agents` depends on
   `ai_primitives: ^0.1.0` exactly as it will once published, but pub
   resolves it from disk while both are in this workspace.
 - Removed `publish_to: none` from both packages, since they're intended
@@ -38,7 +38,7 @@ Split the single `dart_agent_primitives` package into two:
     `returnToolRequests` renamed to `returnToolCalls`.
   - Added `Model.parse`.
 
-- `mini_swe_agent` — `Agent`, `AgentConfig`, `AgentStatus`, `Result`,
+- `dart_agents` — `Agent`, `AgentConfig`, `AgentStatus`, `Result`,
   `BasicAgent`, and `MiniSweAgent`, depending on `ai_primitives`. Doc
   comments now make clear this is a coding-agent-scoped loop, not a
   general agent abstraction.

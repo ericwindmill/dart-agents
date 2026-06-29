@@ -10,7 +10,7 @@ implementation for Dart, split into two packages:
   are designed to map cleanly onto the conventions used by OpenAI,
   Anthropic, and MCP.
 
-- **[`mini_swe_agent`](packages/mini_swe_agent)** — `Agent`,
+- **[`dart_agents`](packages/dart_agents)** — `Agent`,
   `BasicAgent`, and `MiniSweAgent`: a minimal generate-execute
   tool-calling loop for coding tasks, built entirely on
   `ai_primitives`.
@@ -18,7 +18,7 @@ implementation for Dart, split into two packages:
 Depend on `ai_primitives` alone if you're building your own agent loop,
 a chat UI, an MCP/A2A adapter, or anything else that needs a common
 vocabulary for messages and tools without committing to a specific
-agent framework. Depend on `mini_swe_agent` as well if you want a
+agent framework. Depend on `dart_agents` as well if you want a
 ready-made coding-agent loop.
 
 ## Working in this repo

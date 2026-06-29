@@ -1,4 +1,4 @@
-name: mini_swe_agent
+name: dart_agents
 description: >-
   A minimal tool-calling coding-agent loop for Dart, built on
   package:ai_primitives. Includes a single-turn BasicAgent and a

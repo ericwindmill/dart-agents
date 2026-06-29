@@ -1,5 +1,5 @@
 import 'package:ai_primitives/ai_primitives.dart';
-import 'package:mini_swe_agent/mini_swe_agent.dart';
+import 'package:dart_agents/dart_agents.dart';
 import 'package:test/test.dart';
 
 void main() {

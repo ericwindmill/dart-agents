@@ -1,4 +1,4 @@
-# mini_swe_agent
+# dart_agents
 
 A minimal tool-calling coding-agent loop for Dart, built on
 [`package:ai_primitives`](../ai_primitives).
@@ -15,7 +15,7 @@ implementation to connect a real model provider.
 
 ```dart
 import 'package:ai_primitives/ai_primitives.dart';
-import 'package:mini_swe_agent/mini_swe_agent.dart';
+import 'package:dart_agents/dart_agents.dart';
 
 final bashTool = Tool(
   name: 'bash',

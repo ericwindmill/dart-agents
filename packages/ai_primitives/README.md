@@ -22,7 +22,7 @@ mostly relabelling fields, not reshaping data.
 
 This package does **not** implement a provider client, an agent loop, or
 MCP/A2A support — see [`AI`] for the seam where you plug in a real
-provider, and `package:mini_swe_agent` for an example tool-calling loop
+provider, and `package:dart_agents` for an example tool-calling loop
 built on top of these primitives.
 
 ## Usage

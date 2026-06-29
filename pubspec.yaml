@@ -6,7 +6,7 @@ environment:
 
 workspace:
   - packages/ai_primitives
-  - packages/mini_swe_agent
+  - packages/dart_agents
 
 dev_dependencies:
   melos: ^7.0.0
